@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contabilidades Mel (ACMEL) | Asesoría Contable y Tributaria para Pymes</title>
+  <meta name="description" content="ACMEL ofrece servicios de contabilidad, formalización de empresas, operación renta y asesoría tributaria integral para emprendedores y pymes en Chile." />
+  <meta name="keywords" content="contabilidad pymes, formalización empresas, operación renta, asesoría tributaria, contador Chile" />
+  <meta name="author" content="Contabilidades Mel ACMEL" />
+  <meta property="og:title" content="Contabilidades Mel (ACMEL) | Asesoría Contable Profesional" />
+  <meta property="og:description" content="Tu socio contable de confianza. Formalización, contabilidad, renta y optimización tributaria para tu negocio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  <link rel="canonical" href="https://acmel.cl/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES & RESET
+    ============================================================ */
+    :root {
+      --navy:   #0B1F3A;
+      --blue:   #1A4B8C;
+      --sky:    #2B7FD4;
+      --teal:   #0FA884;
+      --mint:   #E6F7F3;
+      --cream:  #F7F9FC;
+      --white:  #FFFFFF;
+      --gray1:  #F0F4F9;
+      --gray2:  #CBD5E1;
+      --gray3:  #64748B;
+      --text:   #1E293B;
+      --gold:   #E8A92D;
+      --shadow-sm: 0 2px 8px rgba(11,31,58,.08);
+      --shadow-md: 0 8px 32px rgba(11,31,58,.12);
+      --shadow-lg: 0 20px 60px rgba(11,31,58,.18);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 40px;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section--alt { background: var(--cream); }
+    .section--dark { background: var(--navy); color: var(--white); }
+    .tag {
+      display: inline-block;
+      background: var(--mint);
+      color: var(--teal);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    .tag--light { background: rgba(255,255,255,.12); color: var(--white); }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-title--white { color: var(--white); }
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--gray3);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-sub--white { color: rgba(255,255,255,.7); }
+    .section-header { margin-bottom: 64px; }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 99px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sky), var(--blue));
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(43,127,212,.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(43,127,212,.5);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--gray2);
+    }
+    .btn-secondary:hover {
+      border-color: var(--sky);
+      color: var(--sky);
+      transform: translateY(-2px);
+    }
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal), #0B9B7A);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(15,168,132,.35);
+    }
+    .btn-teal:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(15,168,132,.45);
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,.1);
+      border-color: var(--white);
+    }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(16px);
+      padding: 12px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo .logo-mark {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--sky), var(--teal));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .nav-logo .logo-text { font-weight: 700; font-size: 1.1rem; color: var(--navy); line-height: 1.2; }
+    .nav-logo .logo-text span { display: block; font-size: .7rem; font-weight: 400; color: var(--gray3); letter-spacing: .04em; }
+    #navbar.scrolled .nav-logo .logo-text { color: var(--navy); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.85);
+      transition: color var(--transition);
+    }
+    #navbar.scrolled .nav-links a { color: var(--gray3); }
+    .nav-links a:hover { color: var(--sky) !important; }
+    .nav-cta { margin-left: 12px; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    #navbar.scrolled .nav-hamburger span { background: var(--navy); }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--navy);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--teal); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #0F2D52 50%, #133A6A 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(43,127,212,.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(15,168,132,.12) 0%, transparent 45%),
+        radial-gradient(circle at 60% 80%, rgba(43,127,212,.1) 0%, transparent 40%);
+    }
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 140px 0 100px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      color: var(--teal);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.4); }
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      max-width: 720px;
+    }
+    .hero-title em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--teal), var(--sky));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.7);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-stat { }
+    .hero-stat .num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat .num span { color: var(--teal); }
+    .hero-stat .label { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: 4px; letter-spacing: .04em; }
+    .hero-visual {
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 42%;
+      max-width: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      width: 100%;
+      max-width: 380px;
+      animation: floatCard 6s ease-in-out infinite;
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+    .hero-card-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .hero-card-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .hero-card-item:last-child { border-bottom: none; }
+    .hero-card-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-card-icon.teal { background: rgba(15,168,132,.2); }
+    .hero-card-icon.blue { background: rgba(43,127,212,.2); }
+    .hero-card-icon.gold { background: rgba(232,169,45,.2); }
+    .hero-card-text { font-size: .9rem; color: rgba(255,255,255,.85); font-weight: 500; }
+    .hero-card-check { margin-left: auto; color: var(--teal); font-size: 1rem; }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray1);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sky), var(--teal));
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: left;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-sm);
+      background: var(--mint);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon {
+      background: linear-gradient(135deg, var(--sky), var(--teal));
+    }
+    .service-card:hover .service-icon svg { color: var(--white); }
+    .service-icon svg { width: 26px; height: 26px; color: var(--sky); transition: color var(--transition); }
+    .service-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .service-desc { font-size: .9rem; color: var(--gray3); line-height: 1.65; }
+
+    /* ============================================================
+       BENEFITS
+    ============================================================ */
+    .benefits-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .benefits-list { display: flex; flex-direction: column; gap: 28px; }
+    .benefit-item { display: flex; gap: 18px; }
+    .benefit-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sky), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .benefit-text h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .benefit-text p { font-size: .9rem; color: var(--gray3); line-height: 1.65; }
+    .benefits-visual {
+      background: linear-gradient(135deg, var(--navy), #1A3A6B);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefits-visual::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -30%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(43,127,212,.25) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .benefits-visual-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .benefit-stat-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .benefit-stat-box {
+      flex: 1;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+    }
+    .benefit-stat-box .val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--teal);
+    }
+    .benefit-stat-box .lbl { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 4px; }
+    .benefit-quote {
+      background: rgba(255,255,255,.05);
+      border-left: 3px solid var(--teal);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: .9rem;
+      color: rgba(255,255,255,.75);
+      line-height: 1.65;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-bg {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--mint), #C5EDE5);
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .about-img-bg svg { width: 120px; height: 120px; color: var(--teal); opacity: .3; }
+    .about-badge {
+      position: absolute;
+      bottom: -24px; right: -24px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .about-badge .num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--sky); }
+    .about-badge .txt { font-size: .78rem; color: var(--gray3); margin-top: 2px; }
+    .about-text { }
+    .about-text p { font-size: 1rem; color: var(--gray3); line-height: 1.75; margin-bottom: 20px; }
+    .about-values { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .about-chip {
+      background: var(--mint);
+      color: var(--teal);
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 99px;
+    }
+
+    /* ============================================================
+       PROCESS
+    ============================================================ */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 2px;
+      background: linear-gradient(90deg, var(--sky), var(--teal));
+      z-index: 0;
+    }
+    .process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .step-bubble {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--sky);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--sky);
+      position: relative;
+      box-shadow: 0 0 0 8px var(--cream);
+      transition: var(--transition);
+    }
+    .process-step:hover .step-bubble {
+      background: linear-gradient(135deg, var(--sky), var(--teal));
+      color: var(--white);
+      border-color: var(--teal);
+      transform: scale(1.1);
+    }
+    .step-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .step-desc { font-size: .85rem; color: var(--gray3); line-height: 1.65; }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .testimonials-wrapper { position: relative; overflow: hidden; }
+    .testimonials-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+    .testimonial-slide { min-width: 100%; }
+    .testimonial-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .testi-stars { color: var(--gold); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-text { font-size: .95rem; color: rgba(255,255,255,.8); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: .9rem; font-weight: 600; color: var(--white); }
+    .testi-role { font-size: .78rem; color: rgba(255,255,255,.5); margin-top: 2px; }
+    .testi-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    .testi-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.25);
+      background: none;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .testi-btn:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+    .testi-dots { display: flex; align-items: center; gap: 8px; }
+    .testi-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .testi-dot.active { background: var(--teal); width: 24px; border-radius: 4px; }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      border: 1px solid var(--gray2);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .faq-item.open { border-color: var(--sky); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      cursor: pointer;
+      background: var(--white);
+      transition: background var(--transition);
+    }
+    .faq-item.open .faq-question { background: var(--cream); }
+    .faq-question-text { font-size: 1rem; font-weight: 600; color: var(--navy); }
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--gray2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      color: var(--gray3);
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .faq-item.open .faq-icon { background: var(--sky); border-color: var(--sky); color: var(--white); transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .4s ease;
+    }
+    .faq-answer-inner { padding: 0 28px 22px; font-size: .95rem; color: var(--gray3); line-height: 1.75; }
+    .faq-item.open .faq-answer { max-height: 300px; }
+
+    /* ============================================================
+       CONTACT FORM
+    ============================================================ */
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    .contact-info { }
+    .contact-info p { font-size: 1rem; color: var(--gray3); line-height: 1.75; margin-bottom: 32px; }
+    .contact-methods { display: flex; flex-direction: column; gap: 16px; }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--gray1);
+      border-radius: var(--radius-sm);
+    }
+    .contact-method-icon {
+      width: 40px; height: 40px;
+      background: var(--mint);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-method-icon svg { width: 20px; height: 20px; color: var(--teal); }
+    .contact-method-label { font-size: .78rem; color: var(--gray3); }
+    .contact-method-value { font-size: .95rem; font-weight: 600; color: var(--navy); }
+
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--gray2);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-title { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+    .form-label span { color: var(--sky); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray2);
+      border-radius: var(--radius-sm);
+      font-size: .95rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--sky);
+      box-shadow: 0 0 0 3px rgba(43,127,212,.1);
+    }
+    .form-input.error, .form-select.error, .form-textarea.error {
+      border-color: #EF4444;
+      box-shadow: 0 0 0 3px rgba(239,68,68,.1);
+    }
+    .form-error {
+      font-size: .78rem;
+      color: #EF4444;
+      margin-top: 5px;
+      display: none;
+    }
+    .form-error.show { display: block; }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; padding: 14px; margin-top: 6px; }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+    .form-success.show { display: block; }
+    .form-success-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--mint);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .form-success-icon svg { width: 32px; height: 32px; color: var(--teal); }
+    .form-success h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .form-success p { font-size: .9rem; color: var(--gray3); }
+
+    /* ============================================================
+       FINAL CTA
+    ============================================================ */
+    #cta-final {
+      background: linear-gradient(135deg, var(--navy) 0%, #133A6A 100%);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(43,127,212,.2) 0%, transparent 65%);
+    }
+    #cta-final .container { position: relative; z-index: 1; }
+    #cta-final .section-title { color: var(--white); }
+    #cta-final .section-sub { color: rgba(255,255,255,.65); margin: 0 auto 40px; }
+    #cta-final .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #071628;
+      color: rgba(255,255,255,.6);
+      padding: 64px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-text { color: var(--white); font-size: 1.1rem; font-weight: 700; }
+    .footer-brand .logo-text span { color: rgba(255,255,255,.4); font-size: .7rem; }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; margin-top: 14px; }
+    .footer-title { font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: .9rem; color: rgba(255,255,255,.6); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: .82rem; }
+    .footer-bottom a { color: var(--teal); }
+
+    /* ============================================================
+       WHATSAPP FLOAT
+    ============================================================ */
+    #wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 990;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .wa-tooltip {
+      background: var(--white);
+      color: var(--navy);
+      font-size: .85rem;
+      font-weight: 600;
+      padding: 10px 16px;
+      border-radius: 99px;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      transform: translateX(10px);
+      transition: var(--transition);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    #wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+    .wa-btn {
+      width: 58px; height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: var(--transition);
+      animation: waPop 2.5s ease-in-out infinite;
+    }
+    .wa-btn:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,.5); }
+    .wa-btn svg { width: 30px; height: 30px; color: var(--white); }
+    @keyframes waPop {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
+      50% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 8px rgba(37,211,102,.12); }
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .hero-visual { display: none; }
+      .benefits-layout { grid-template-columns: 1fr; gap: 48px; }
+      .about-layout { grid-template-columns: 1fr; gap: 48px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+      .process-steps::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .testimonial-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-badge { bottom: -16px; right: -8px; }
+      .hero-stats { gap: 28px; }
+    }
+    @media (max-width: 500px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .benefit-stat-row { flex-direction: column; }
+      .testi-controls { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav id="navbar" aria-label="Navegación principal">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="ACMEL inicio">
+        <div class="logo-mark">AC</div>
+        <div class="logo-text">
+          Contabilidades Mel
+          <span>ACMEL · Asesoría Contable</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#contacto" class="btn btn-teal nav-cta" style="font-size:.88rem;padding:10px 24px">Contactar ahora</a>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú móvil">
+  <a href="#servicios" class="mobile-link">Servicios</a>
+  <a href="#beneficios" class="mobile-link">Beneficios</a>
+  <a href="#nosotros" class="mobile-link">Nosotros</a>
+  <a href="#proceso" class="mobile-link">Proceso</a>
+  <a href="#testimonios" class="mobile-link">Testimonios</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contacto" class="btn btn-teal">Contactar ahora</a>
+</div>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero" aria-label="Sección principal">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Asesoría Contable Profesional · Chile</div>
+      <h1 class="hero-title">
+        Tu negocio crece cuando <em>los números están en orden</em>
+      </h1>
+      <p class="hero-sub">Contabilidad, formalización y asesoría tributaria para emprendedores y pymes. Nos encargamos de los números; tú enfócate en crecer.</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-teal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Solicitar asesoría gratis
+        </a>
+        <a href="#servicios" class="btn btn-outline-white">Ver servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">+200<span>+</span></div>
+          <div class="label">Clientes satisfechos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">10<span>+</span></div>
+          <div class="label">Años de experiencia</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">98<span>%</span></div>
+          <div class="label">Tasa de retención</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Decorative floating card -->
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-card">
+      <div class="hero-card-title">Nuestros Servicios</div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon teal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="var(--teal)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <span class="hero-card-text">Formalización de empresas</span>
+        <span class="hero-card-check">✓</span>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon blue">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="var(--sky)"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <span class="hero-card-text">Contabilidad para pymes</span>
+        <span class="hero-card-check">✓</span>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="var(--gold)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <span class="hero-card-text">Operación renta</span>
+        <span class="hero-card-check">✓</span>
+      </div>
+      <div class="hero-card-item">
+        <div class="hero-card-icon teal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="var(--teal)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span class="hero-card-text">Optimización tributaria</span>
+        <span class="hero-card-check">✓</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="servicios" class="section" aria-label="Servicios">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Lo que hacemos</span>
+      <h2 class="section-title">Servicios diseñados para <br>hacer crecer tu negocio</h2>
+      <p class="section-sub">Soluciones contables y tributarias completas para que puedas concentrarte en lo que realmente importa.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal" style="transition-delay:.05s">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3 class="service-title">Formalización de Empresas</h3>
+        <p class="service-desc">Constituimos tu empresa de forma rápida y segura: SPA, EIRL, SA y más. Te guiamos en cada paso del proceso legal y tributario.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.1s">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="service-title">Contabilidad para Pymes</h3>
+        <p class="service-desc">Llevamos tu contabilidad mensual con precisión: libros, balances, estados financieros y cumplimiento de obligaciones tributarias al día.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.15s">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="service-title">Operación Renta</h3>
+        <p class="service-desc">Preparamos y presentamos tu declaración anual de impuestos maximizando devoluciones y minimizando riesgos de multas o diferencias.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.2s">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3 class="service-title">Asesoría Contable Integral</h3>
+        <p class="service-desc">Acompañamiento permanente para la toma de decisiones financieras: análisis, proyecciones, informes gerenciales y planificación estratégica.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.25s">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="service-title">Optimización Tributaria</h3>
+        <p class="service-desc">Planificación inteligente de impuestos para reducir la carga tributaria de forma legal: uso de beneficios, créditos y regímenes tributarios.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BENEFITS
+============================================================ -->
+<section id="beneficios" class="section section--alt" aria-label="Beneficios">
+  <div class="container">
+    <div class="benefits-layout">
+      <div class="reveal-left">
+        <span class="tag">¿Por qué elegirnos?</span>
+        <h2 class="section-title">Más que un contador,<br>un socio estratégico</h2>
+        <p class="section-sub" style="margin-bottom:40px">En ACMEL entendemos que cada pyme es única. Por eso ofrecemos soluciones personalizadas que se adaptan a tu realidad.</p>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-num">01</div>
+            <div class="benefit-text">
+              <h3>Respuesta rápida garantizada</h3>
+              <p>Respondemos tus consultas en menos de 24 horas hábiles. Tu tranquilidad no puede esperar.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-num">02</div>
+            <div class="benefit-text">
+              <h3>Precios transparentes y justos</h3>
+              <p>Sin letra chica ni costos ocultos. Planes claros que se ajustan al tamaño y necesidades de tu negocio.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-num">03</div>
+            <div class="benefit-text">
+              <h3>Equipo certificado y actualizado</h3>
+              <p>Contadores con formación continua y dominio de las últimas normativas del SII y legislación tributaria chilena.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-num">04</div>
+            <div class="benefit-text">
+              <h3>Tecnología al servicio del cliente</h3>
+              <p>Acceso a reportes digitales en tiempo real, firma electrónica y documentos en la nube siempre disponibles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="benefits-visual">
+          <h3 class="benefits-visual-title">Resultados que hablan por sí solos</h3>
+          <div class="benefit-stat-row">
+            <div class="benefit-stat-box">
+              <div class="val">+200</div>
+              <div class="lbl">Clientes activos</div>
+            </div>
+            <div class="benefit-stat-box">
+              <div class="val">98%</div>
+              <div class="lbl">Satisfacción</div>
+            </div>
+          </div>
+          <div class="benefit-stat-row">
+            <div class="benefit-stat-box">
+              <div class="val">10+</div>
+              <div class="lbl">Años experiencia</div>
+            </div>
+            <div class="benefit-stat-box">
+              <div class="val">0</div>
+              <div class="lbl">Multas SII</div>
+            </div>
+          </div>
+          <div class="benefit-quote">
+            "Desde que trabajo con ACMEL, no me preocupo más de los impuestos. Me enfoco en hacer crecer mi negocio con total tranquilidad."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="nosotros" class="section" aria-label="Sobre nosotros">
+  <div class="container">
+    <div class="about-layout">
+      <div class="reveal-left">
+        <div class="about-img-wrap">
+          <div class="about-img-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="about-badge">
+            <div class="num">10+</div>
+            <div class="txt">Años de<br>trayectoria</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="tag">Sobre nosotros</span>
+        <h2 class="section-title">Nacimos para apoyar a quienes se atreven a emprender</h2>
+        <p>En Contabilidades Mel (ACMEL) somos un equipo de contadores y asesores tributarios apasionados por ayudar a emprendedores y pequeñas empresas a construir negocios sólidos y financieramente saludables.</p>
+        <p>Llevamos más de una década acompañando a cientos de pymes chilenas, desde su formalización hasta su consolidación como empresas rentables. Conocemos los desafíos reales del emprendimiento y trabajamos como un verdadero socio estratégico para cada cliente.</p>
+        <p>Nuestra misión es simple: que nunca tengas que preocuparte por los números para que puedas concentrarte en lo que más te apasiona.</p>
+        <div class="about-values">
+          <span class="about-chip">Confianza</span>
+          <span class="about-chip">Transparencia</span>
+          <span class="about-chip">Precisión</span>
+          <span class="about-chip">Compromiso</span>
+          <span class="about-chip">Innovación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS
+============================================================ -->
+<section id="proceso" class="section section--alt" aria-label="Proceso de trabajo">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <span class="tag">Cómo trabajamos</span>
+      <h2 class="section-title" style="margin:0 auto 16px">Un proceso claro, sin complicaciones</h2>
+      <p class="section-sub" style="margin:0 auto">Empezar es fácil. En 4 pasos simples tu contabilidad queda en las mejores manos.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal" style="transition-delay:.05s">
+        <div class="step-bubble">1</div>
+        <h3 class="step-title">Diagnóstico gratuito</h3>
+        <p class="step-desc">Conversamos sobre tu negocio, situación tributaria actual y qué necesitas. Sin compromisos ni costo.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.1s">
+        <div class="step-bubble">2</div>
+        <h3 class="step-title">Propuesta personalizada</h3>
+        <p class="step-desc">Te presentamos un plan hecho a la medida de tu empresa, con servicios, plazos y precios claros.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.15s">
+        <div class="step-bubble">3</div>
+        <h3 class="step-title">Onboarding express</h3>
+        <p class="step-desc">Traspasamos tu información, ordenamos tus documentos y activamos todos los procesos contables.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.2s">
+        <div class="step-bubble">4</div>
+        <h3 class="step-title">Acompañamiento continuo</h3>
+        <p class="step-desc">A partir de aquí nos encargamos de todo. Tú recibes reportes, alertas y atención personalizada mes a mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="testimonios" class="section section--dark" aria-label="Testimonios">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <span class="tag tag--light">Testimonios</span>
+      <h2 class="section-title section-title--white" style="margin:0 auto 16px">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub section-sub--white" style="margin:0 auto">Más de 200 emprendedores y pymes confían en ACMEL para mantener sus negocios en regla.</p>
+    </div>
+    <div class="testimonials-wrapper reveal">
+      <div class="testimonials-track" id="testiTrack">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-inner">
+            <div class="testimonial-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"ACMEL me ayudó a formalizar mi empresa en tiempo récord. El proceso fue claro, sin burocracia y con un acompañamiento impecable en cada etapa."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#2B7FD4,#0FA884)">CA</div>
+                <div>
+                  <div class="testi-name">Carlos Andrade</div>
+                  <div class="testi-role">Dueño de Ferretería Andrade</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"Antes de ACMEL pagaba mucho en impuestos sin entender por qué. Ahora tengo una planificación tributaria inteligente y ahorro de forma legal cada año."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#E8A92D,#E07B2D)">MP</div>
+                <div>
+                  <div class="testi-name">María Pérez</div>
+                  <div class="testi-role">Diseñadora freelance</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"El equipo de ACMEL es increíblemente responsable y siempre disponible. Nunca he tenido problemas con el SII desde que trabajo con ellos."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#0FA884,#1A4B8C)">RL</div>
+                <div>
+                  <div class="testi-name">Roberto Lagos</div>
+                  <div class="testi-role">Restaurant "La Estrella"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-inner">
+            <div class="testimonial-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"Como emprendedora sin conocimientos contables, ACMEL me explicó todo de forma simple. Ahora entiendo mis finanzas y tomo mejores decisiones."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#DB2777)">SV</div>
+                <div>
+                  <div class="testi-name">Sofía Vargas</div>
+                  <div class="testi-role">Tienda de cosméticos online</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"La operación renta de mi empresa siempre fue un dolor de cabeza. Con ACMEL, todo fue ordenado, rápido y obtuvimos una devolución mayor de lo esperado."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#2B7FD4,#1A4B8C)">JM</div>
+                <div>
+                  <div class="testi-name">Jorge Muñoz</div>
+                  <div class="testi-role">Consultor TI independiente</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"Llevo 3 años con ACMEL y han sido clave en el crecimiento de mi pyme. Su asesoría me permitió tomar decisiones financieras con total seguridad."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#0FA884,#059669)">PM</div>
+                <div>
+                  <div class="testi-name">Patricia Morales</div>
+                  <div class="testi-role">Spa & Bienestar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-controls">
+        <button class="testi-btn" id="testPrev" aria-label="Testimonio anterior">&#8592;</button>
+        <div class="testi-dots">
+          <button class="testi-dot active" data-i="0" aria-label="Slide 1"></button>
+          <button class="testi-dot" data-i="1" aria-label="Slide 2"></button>
+        </div>
+        <button class="testi-btn" id="testNext" aria-label="Testimonio siguiente">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section id="faq" class="section" aria-label="Preguntas frecuentes">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title" style="margin:0 auto 16px">Preguntas frecuentes</h2>
+      <p class="section-sub" style="margin:0 auto">Resolvemos las dudas más comunes sobre nuestros servicios.</p>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-question-text">¿Cuánto cuesta contratar los servicios de ACMEL?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Nuestros precios son totalmente personalizados según el tamaño y necesidades de tu negocio. Ofrecemos planes desde servicios básicos para independientes hasta asesoría integral para pymes. Contáctanos para recibir una cotización gratuita y sin compromisos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-question-text">¿Trabajan solo con empresas o también con personas naturales?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Trabajamos con ambos. Atendemos a profesionales independientes, trabajadores con honorarios, emprendedores en etapa inicial y empresas de todos los tamaños. Si tienes obligaciones tributarias en Chile, podemos ayudarte.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-question-text">¿Qué necesito para empezar a trabajar con ustedes?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Solo necesitas contactarnos y tener a mano tu RUT, datos básicos de tu empresa o actividad y los documentos contables más recientes. Nuestro equipo se encarga del resto: hacemos el traspaso de forma ordenada y sin que pierdas continuidad en tus operaciones.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-question-text">¿Atienden clientes de todo Chile o solo de una región?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Atendemos clientes de todo Chile de forma 100% digital y remota. No importa si estás en Arica, Santiago o Punta Arenas: gracias a la tecnología podemos brindarte el mismo servicio de calidad sin que tengas que desplazarte.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-question-text">¿Cómo me aseguro de que mis documentos estén seguros?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Utilizamos plataformas de almacenamiento en la nube con cifrado de datos y acceso restringido. Tu información contable está protegida y solo es accesible por ti y el equipo autorizado de ACMEL. Cumplimos con todas las normativas de confidencialidad y protección de datos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-question-text">¿Con qué frecuencia recibiré informes de mi contabilidad?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Dependiendo del plan contratado, puedes recibir informes mensuales, trimestrales o en tiempo real a través de nuestra plataforma digital. Además, siempre puedes contactar a tu asesor asignado ante cualquier consulta puntual.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT FORM
+============================================================ -->
+<section id="contacto" class="section section--alt" aria-label="Formulario de contacto">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="reveal-left">
+        <span class="tag">Contacto</span>
+        <h2 class="section-title">Hablemos de tu negocio</h2>
+        <p>Completa el formulario y un asesor ACMEL se pondrá en contacto contigo en menos de 24 horas hábiles. La primera consulta es completamente gratuita.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.79l3-.01a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.9a16 16 0 0 0 6.29 6.29l1.27-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-method-label">WhatsApp / Teléfono</div>
+              <div class="contact-method-value">+56 9 7523 3425</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-method-label">Correo electrónico</div>
+              <div class="contact-method-value">contacto@acmel.cl</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-method-label">Horario de atención</div>
+              <div class="contact-method-value">Lun–Vie: 9:00 – 18:00 hrs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="contact-form">
+          <h3 class="form-title">Solicita tu asesoría gratuita</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="nombre">Nombre <span>*</span></label>
+                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" />
+                <div class="form-error" id="nombreError">Por favor ingresa tu nombre.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="apellido">Apellido <span>*</span></label>
+                <input type="text" id="apellido" name="apellido" class="form-input" placeholder="Tu apellido" />
+                <div class="form-error" id="apellidoError">Por favor ingresa tu apellido.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Correo electrónico <span>*</span></label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="correo@ejemplo.cl" />
+              <div class="form-error" id="emailError">Por favor ingresa un correo válido.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="telefono">Teléfono <span>*</span></label>
+              <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+56 9 XXXX XXXX" />
+              <div class="form-error" id="telefonoError">Por favor ingresa tu teléfono.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="servicio">Servicio de interés <span>*</span></label>
+              <select id="servicio" name="servicio" class="form-select">
+                <option value="">Selecciona un servicio...</option>
+                <option value="formalizacion">Formalización de empresa</option>
+                <option value="contabilidad">Contabilidad para pymes</option>
+                <option value="renta">Operación renta</option>
+                <option value="asesoria">Asesoría contable integral</option>
+                <option value="tributario">Optimización tributaria</option>
+                <option value="otro">Otro / No sé aún</option>
+              </select>
+              <div class="form-error" id="servicioError">Por favor selecciona un servicio.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" class="form-textarea" placeholder="Cuéntanos brevemente sobre tu negocio o consulta..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-teal form-submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Enviar solicitud
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>¡Mensaje enviado con éxito!</h3>
+            <p>Gracias por contactarnos. Un asesor ACMEL se comunicará contigo en las próximas 24 horas hábiles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section id="cta-final" aria-label="Llamado a la acción">
+  <div class="container">
+    <span class="tag tag--light" style="margin-bottom:20px">¿Listo para comenzar?</span>
+    <h2 class="section-title reveal">El mejor momento para ordenar<br>tu contabilidad es hoy</h2>
+    <p class="section-sub reveal">No esperes a la próxima fiscalización. Contáctanos ahora y recibe una asesoría gratuita sin compromisos.</p>
+    <div class="cta-btns reveal">
+      <a href="#contacto" class="btn btn-teal">Solicitar asesoría gratis</a>
+      <a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.849L.057 23.17a.5.5 0 0 0 .617.63l5.52-1.443A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.716-.519-5.255-1.42l-.374-.22-3.876 1.015 1.036-3.775-.24-.388A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-mark" style="width:36px;height:36px;font-size:.95rem">AC</div>
+          <div class="logo-text" style="color:white">
+            Contabilidades Mel
+            <span>ACMEL · Asesoría Contable</span>
+          </div>
+        </div>
+        <p style="margin-top:14px">Tu socio contable de confianza. Formalización, contabilidad y asesoría tributaria para emprendedores y pymes en Chile.</p>
+      </div>
+      <div>
+        <h4 class="footer-title">Servicios</h4>
+        <ul class="footer-links">
+          <li><a href="#servicios">Formalización de empresas</a></li>
+          <li><a href="#servicios">Contabilidad para pymes</a></li>
+          <li><a href="#servicios">Operación renta</a></li>
+          <li><a href="#servicios">Asesoría integral</a></li>
+          <li><a href="#servicios">Optimización tributaria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Empresa</h4>
+        <ul class="footer-links">
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+56975233425">+56 9 7523 3425</a></li>
+          <li><a href="mailto:contacto@acmel.cl">contacto@acmel.cl</a></li>
+          <li><span>Lun–Vie: 9:00–18:00</span></li>
+          <li><a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Contabilidades Mel ACMEL. Todos los derechos reservados.</p>
+      <p>Hecho con ❤️ para emprendedores chilenos · <a href="#contacto">Contáctanos</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     WHATSAPP FLOAT
+============================================================ -->
+<div id="wa-float" aria-label="Contactar por WhatsApp">
+  <span class="wa-tooltip">¡Escríbenos ahora!</span>
+  <a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.849L.057 23.17a.5.5 0 0 0 .617.63l5.52-1.443A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.716-.519-5.255-1.42l-.374-.22-3.876 1.015 1.036-3.775-.24-.388A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* ============================================================
+     1. NAVBAR — scroll behavior
+  ============================================================ */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  /* ============================================================
+     2. HAMBURGER / MOBILE MENU
+  ============================================================ */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu   = document.getElementById('mobileMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mobile-link, .mobile-menu .btn').forEach(el => {
+    el.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ============================================================
+     3. INTERSECTION OBSERVER — reveal animations
+  ============================================================ */
+  const revealSelectors = '.reveal, .reveal-left, .reveal-right';
+  const revealEls = document.querySelectorAll(revealSelectors);
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ============================================================
+     4. TESTIMONIALS SLIDER
+  ============================================================ */
+  const track  = document.getElementById('testiTrack');
+  const dots   = document.querySelectorAll('.testi-dot');
+  const btnPrev = document.getElementById('testPrev');
+  const btnNext = document.getElementById('testNext');
+  let current  = 0;
+  const total  = document.querySelectorAll('.testimonial-slide').length;
+
+  function goToSlide(idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  btnPrev.addEventListener('click', () => goToSlide(current - 1));
+  btnNext.addEventListener('click', () => goToSlide(current + 1));
+  dots.forEach(d => d.addEventListener('click', () => goToSlide(+d.dataset.i)));
+
+  // Auto-advance
+  let autoSlide = setInterval(() => goToSlide(current + 1), 6000);
+  [btnPrev, btnNext, ...dots].forEach(el => {
+    el.addEventListener('click', () => {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(() => goToSlide(current + 1), 6000);
+    });
+  });
+
+  /* ============================================================
+     5. FAQ ACCORDION
+  ============================================================ */
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item     = question.parentElement;
+      const isOpen   = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // open clicked if it wasn't open
+      if (!isOpen) {
+        item.classList.add('open');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+    // keyboard support
+    question.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); question.click(); }
+    });
+  });
+
+  /* ============================================================
+     6. CONTACT FORM VALIDATION
+  ============================================================ */
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  function setError(id, errorId, show) {
+    const field = document.getElementById(id);
+    const error = document.getElementById(errorId);
+    if (show) {
+      field.classList.add('error');
+      error.classList.add('show');
+    } else {
+      field.classList.remove('error');
+      error.classList.remove('show');
+    }
+    return !show;
+  }
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateForm() {
+    let valid = true;
+    const nombre   = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('apellido').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const servicio = document.getElementById('servicio').value;
+
+    valid = setError('nombre',   'nombreError',   nombre.length < 2)   && valid;
+    valid = setError('apellido', 'apellidoError', apellido.length < 2)  && valid;
+    valid = setError('email',    'emailError',    !validateEmail(email)) && valid;
+    valid = setError('telefono', 'telefonoError', telefono.length < 7)  && valid;
+    valid = setError('servicio', 'servicioError', servicio === '')       && valid;
+
+    return valid;
+  }
+
+  // Live validation
+  ['nombre','apellido','email','telefono','servicio'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', validateForm);
+    el.addEventListener('change', validateForm);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    // Simulate sending
+    const btn = form.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    setTimeout(() => {
+      form.style.display = 'none';
+      successMsg.classList.add('show');
+    }, 1400);
+  });
+
+  /* ============================================================
+     7. SMOOTH SCROLL for all anchor links
+  ============================================================ */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = 72;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
