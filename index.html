@@ -301,10 +301,19 @@
         linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-    .hero-content {
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 140px 0 100px;
       position: relative;
       z-index: 2;
-      padding: 140px 0 100px;
+    }
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+      max-width: 620px;
     }
     .hero-eyebrow {
       display: inline-flex;
@@ -371,11 +380,8 @@
     .hero-stat .num span { color: var(--teal); }
     .hero-stat .label { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: 4px; letter-spacing: .04em; }
     .hero-visual {
-      position: absolute;
-      right: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 42%;
-      max-width: 520px;
+      flex-shrink: 0;
+      width: 380px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -948,6 +954,8 @@
     ============================================================ */
     @media (max-width: 1024px) {
       .hero-visual { display: none; }
+      .hero-inner { justify-content: flex-start; }
+      .hero-content { max-width: 100%; }
       .benefits-layout { grid-template-columns: 1fr; gap: 48px; }
       .about-layout { grid-template-columns: 1fr; gap: 48px; }
       .process-steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
@@ -1069,6 +1077,7 @@
   <div class="hero-bg-pattern"></div>
   <div class="hero-grid-lines"></div>
   <div class="container">
+    <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-eyebrow">Asesoría Contable Profesional · Chile</div>
       <h1 class="hero-title">
@@ -1097,7 +1106,6 @@
         </div>
       </div>
     </div>
-  </div>
   <!-- Decorative floating card -->
   <div class="hero-visual" aria-hidden="true">
     <div class="hero-card">
@@ -1132,6 +1140,8 @@
       </div>
     </div>
   </div>
+  </div><!-- end hero-inner -->
+  </div><!-- end container -->
 </section>
 
 <!-- ============================================================
