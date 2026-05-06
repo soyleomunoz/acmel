@@ -11,7 +11,7 @@
   <meta property="og:description" content="Tu socio contable de confianza. Formalización, contabilidad, renta y optimización tributaria para tu negocio." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CL" />
-  <link rel="canonical" href="https://acmel.cl/" />
+  <link rel="canonical" href="https://contabilidadesmel.cl/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -858,28 +858,59 @@
     .footer-links { display: flex; flex-direction: column; gap: 10px; }
     .footer-links a { font-size: .9rem; color: rgba(255,255,255,.6); transition: color var(--transition); }
     .footer-links a:hover { color: var(--teal); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 28px;
+
+    /* Contenedor flotante derecha */
+    #float-right {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 990;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-end;
       gap: 12px;
     }
-    .footer-bottom p { font-size: .82rem; }
-    .footer-bottom a { color: var(--teal); }
+
+    /* Botón subir arriba */
+    #scrollTopBtn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.8);
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      text-decoration: none;
+    }
+    #scrollTopBtn.visible {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    #scrollTopBtn:hover {
+      background: var(--sky);
+      border-color: var(--sky);
+      color: var(--white);
+    }
 
     /* ============================================================
        WHATSAPP FLOAT
     ============================================================ */
     #wa-float {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      z-index: 990;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 12px;
+      width: 100%;
     }
     .wa-tooltip {
       background: var(--white);
@@ -944,7 +975,50 @@
       .benefit-stat-row { flex-direction: column; }
       .testi-controls { flex-direction: column; align-items: center; }
     }
+
+    /* Footer bottom nuevo */
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: .82rem;
+    }
+    #gestixBtn {
+      position: fixed;
+      bottom: 28px;
+      left: 20px;
+      z-index: 990;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 20, 35, 0.85);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.85);
+      font-size: .8rem;
+      padding: 9px 16px;
+      border-radius: 99px;
+      transition: var(--transition);
+      white-space: nowrap;
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+    }
+    #gestixBtn:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.35);
+      color: var(--white);
+    }
+    #gestixBtn strong { color: var(--teal); }
+
   </style>
+  
 </head>
 
 <body>
@@ -1462,7 +1536,7 @@
             </div>
             <div>
               <div class="contact-method-label">Correo electrónico</div>
-              <div class="contact-method-value">contacto@acmel.cl</div>
+              <div class="contact-method-value">contabilidadesmel@gmail.com</div>
             </div>
           </div>
           <div class="contact-method">
@@ -1559,71 +1633,90 @@
      FOOTER
 ============================================================ -->
 <footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo">
-          <div class="logo-mark" style="width:36px;height:36px;font-size:.95rem">AC</div>
-          <div class="logo-text" style="color:white">
-            Contabilidades Mel
-            <span>ACMEL · Asesoría Contable</span>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-mark" style="width:36px;height:36px;font-size:.95rem">AC</div>
+            <div class="logo-text" style="color:white">
+              Contabilidades Mel
+              <span>ACMEL · Asesoría Contable</span>
+            </div>
           </div>
+          <p style="margin-top:14px">Tu socio contable de confianza. Formalización, contabilidad y asesoría tributaria para emprendedores y pymes en Chile.</p>
         </div>
-        <p style="margin-top:14px">Tu socio contable de confianza. Formalización, contabilidad y asesoría tributaria para emprendedores y pymes en Chile.</p>
+        <div>
+          <h4 class="footer-title">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Formalización de empresas</a></li>
+            <li><a href="#servicios">Contabilidad para pymes</a></li>
+            <li><a href="#servicios">Operación renta</a></li>
+            <li><a href="#servicios">Asesoría integral</a></li>
+            <li><a href="#servicios">Optimización tributaria</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="#nosotros">Sobre nosotros</a></li>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contacto</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+56975233425">+56 9 7523 3425</a></li>
+            <li><a href="mailto:contabilidadesmel@gmail.com">contabilidadesmel@gmail.com</a></li>
+            <li><span>Lun–Vie: 9:00–18:00</span></li>
+            <li><a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 class="footer-title">Servicios</h4>
-        <ul class="footer-links">
-          <li><a href="#servicios">Formalización de empresas</a></li>
-          <li><a href="#servicios">Contabilidad para pymes</a></li>
-          <li><a href="#servicios">Operación renta</a></li>
-          <li><a href="#servicios">Asesoría integral</a></li>
-          <li><a href="#servicios">Optimización tributaria</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-title">Empresa</h4>
-        <ul class="footer-links">
-          <li><a href="#nosotros">Sobre nosotros</a></li>
-          <li><a href="#proceso">Cómo trabajamos</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#faq">Preguntas frecuentes</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-title">Contacto</h4>
-        <ul class="footer-links">
-          <li><a href="tel:+56975233425">+56 9 7523 3425</a></li>
-          <li><a href="mailto:contacto@acmel.cl">contacto@acmel.cl</a></li>
-          <li><span>Lun–Vie: 9:00–18:00</span></li>
-          <li><a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <p>© <span id="footerYear"></span> Contabilidades Mel. Todos los derechos reservados.</p>
+        <p>Hecho con 💛 en Santiago, Chile · Desarrollado por <a href="https://gestixpro.cl" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:600;">GestixPro</a></p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2024 Contabilidades Mel ACMEL. Todos los derechos reservados.</p>
-      <p>Hecho con ❤️ para emprendedores chilenos · <a href="#contacto">Contáctanos</a></p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <!-- ============================================================
      WHATSAPP FLOAT
 ============================================================ -->
-<div id="wa-float" aria-label="Contactar por WhatsApp">
-  <span class="wa-tooltip">¡Escríbenos ahora!</span>
-  <a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Abrir WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.849L.057 23.17a.5.5 0 0 0 .617.63l5.52-1.443A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.716-.519-5.255-1.42l-.374-.22-3.876 1.015 1.036-3.775-.24-.388A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
-    </svg>
-  </a>
-</div>
+<!-- Botones flotantes derecha -->
+<div id="float-right">
+    <!-- Botón subir arriba -->
+    <a href="#hero" id="scrollTopBtn" aria-label="Volver arriba">
+      ▲
+    </a>
+
+    <!-- WhatsApp -->
+    <div id="wa-float" aria-label="Contactar por WhatsApp">
+      <span class="wa-tooltip">¡Escríbenos ahora!</span>
+      <a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Abrir WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.849L.057 23.17a.5.5 0 0 0 .617.63l5.52-1.443A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.716-.519-5.255-1.42l-.374-.22-3.876 1.015 1.036-3.775-.24-.388A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+<!-- Botón flotante GestixPro (izquierda) -->
+<a href="https://gestixpro.cl" target="_blank" rel="noopener noreferrer" class="footer-dev-btn" id="gestixBtn">
+  ⚡ Desarrollado por <strong>GestixPro</strong>
+</a>
 
 <!-- ============================================================
      JAVASCRIPT
 ============================================================ -->
 <script>
+
+  /* Año automático en el footer */
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
   /* ============================================================
      1. NAVBAR — scroll behavior
   ============================================================ */
@@ -1803,6 +1896,17 @@
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
+
+  /* Botón subir arriba — mostrar/ocultar según scroll */
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+
 </script>
 </body>
 </html>
