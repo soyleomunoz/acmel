@@ -565,7 +565,7 @@
       overflow: hidden;
       position: relative;
     }
-    .about-img-bg svg { width: 120px; height: 120px; color: var(--teal); opacity: .3; }
+    .about-img-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
     .about-badge {
       position: absolute;
       bottom: -24px; right: -24px;
@@ -631,6 +631,107 @@
     }
     .step-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .step-desc { font-size: .85rem; color: var(--gray3); line-height: 1.65; }
+
+    /* ============================================================
+       PRICING
+    ============================================================ */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--gray1);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+    .price-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .price-card--featured {
+      border: 2px solid var(--gold);
+      background: linear-gradient(180deg, #FFF8EA 0%, var(--white) 260px);
+      box-shadow: var(--shadow-md);
+    }
+    .price-card-badge {
+      position: absolute;
+      top: -15px; left: 50%;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 99px;
+      box-shadow: 0 4px 14px rgba(232,169,45,.4);
+      white-space: nowrap;
+    }
+    .price-card-badge svg { width: 11px; height: 11px; }
+    .price-card-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .price-card-icon svg { width: 24px; height: 24px; color: var(--white); }
+    .price-card-eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray3); }
+    .price-card-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); margin: 4px 0 14px; }
+    .price-card-price-prefix { display: block; font-family: 'DM Sans', sans-serif; font-size: .7rem; font-weight: 600; color: var(--gray3); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 2px; }
+    .price-card-price { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--navy); line-height: 1; }
+    .price-card-price span { font-family: 'DM Sans', sans-serif; font-size: .78rem; font-weight: 500; color: var(--gray3); margin-left: 4px; }
+    .price-card-tagline { font-size: .85rem; color: var(--gray3); line-height: 1.55; margin: 10px 0 22px; min-height: 40px; }
+    .price-card-features { display: flex; flex-direction: column; gap: 11px; margin-bottom: 20px; }
+    .price-card-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .83rem; color: var(--text); line-height: 1.4; }
+    .price-card-features li.is-muted { color: var(--gray2); }
+    .pcf-icon { width: 17px; height: 17px; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+    .pcf-dash { width: 17px; height: 17px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--gray2); font-weight: 700; }
+    .price-card-divider { border-top: 1px dashed var(--gray2); padding-top: 18px; margin-bottom: 4px; }
+    .price-card-extra-head { display: block; font-size: .72rem; font-weight: 700; color: var(--sky); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 10px; }
+    .price-card-extra { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .price-card-extra li { font-size: .8rem; color: var(--gray3); line-height: 1.5; padding-left: 16px; position: relative; }
+    .price-card-extra li::before { content: '•'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+    .price-card-cta { margin-top: auto; width: 100%; justify-content: center; padding: 12px; font-size: .88rem; }
+
+    .pricing-trust {
+      margin-top: 56px;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 36px 44px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .pricing-trust-item { display: flex; align-items: center; gap: 14px; }
+    .pricing-trust-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pricing-trust-icon svg { width: 20px; height: 20px; color: var(--teal); }
+    .pricing-trust-title { font-size: .9rem; font-weight: 700; color: var(--white); }
+    .pricing-trust-sub { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 2px; }
+
+    @media (max-width: 1024px) {
+      .pricing-trust { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .pricing-trust { grid-template-columns: 1fr; padding: 28px; }
+      .price-card--featured { margin-top: 14px; }
+    }
 
     /* ============================================================
        TESTIMONIALS
@@ -1049,6 +1150,7 @@
         <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#precios">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <a href="#contacto" class="btn btn-teal nav-cta" style="font-size:.88rem;padding:10px 24px">Contactar ahora</a>
@@ -1065,6 +1167,7 @@
   <a href="#beneficios" class="mobile-link">Beneficios</a>
   <a href="#nosotros" class="mobile-link">Nosotros</a>
   <a href="#proceso" class="mobile-link">Proceso</a>
+  <a href="#precios" class="mobile-link">Precios</a>
   <a href="#testimonios" class="mobile-link">Testimonios</a>
   <a href="#faq" class="mobile-link">FAQ</a>
   <a href="#contacto" class="btn btn-teal">Contactar ahora</a>
@@ -1282,7 +1385,7 @@
       <div class="reveal-left">
         <div class="about-img-wrap">
           <div class="about-img-bg">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <img src="img/tanya-pablo-recorte.png" alt="Tanya y Pablo, equipo fundador de Contabilidades Mel (ACMEL)" loading="lazy" />
           </div>
           <div class="about-badge">
             <div class="num">10+</div>
@@ -1338,6 +1441,297 @@
         <div class="step-bubble">4</div>
         <h3 class="step-title">Acompañamiento continuo</h3>
         <p class="step-desc">A partir de aquí nos encargamos de todo. Tú recibes reportes, alertas y atención personalizada mes a mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRICING
+============================================================ -->
+<section id="precios" class="section" aria-label="Planes y precios">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <span class="tag">Planes y precios</span>
+      <h2 class="section-title" style="margin:0 auto 16px">Un plan para cada etapa de tu negocio</h2>
+      <p class="section-sub" style="margin:0 auto">Precios claros y transparentes, sin letra chica. Elige el plan que se ajuste al tamaño de tu empresa y crece con nosotros.</p>
+    </div>
+
+    <div class="pricing-grid reveal">
+
+      <!-- EMPRENDE -->
+      <div class="price-card">
+        <div class="price-card-icon" style="background:linear-gradient(135deg,#0FA884,#0B9B7A)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Emprende</h3>
+        <div class="price-card-price">$39.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para quienes recién comienzan.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Liquidaciones de sueldo</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Declaración de renta anual</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Balance general</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Recursos humanos</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Planificación tributaria</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Informes financieros gerenciales</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <ul class="price-card-extra">
+            <li>Asesoría básica</li>
+            <li>Ventas hasta $3.000.000.- mensuales</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-secondary price-card-cta">Elegir plan</a>
+      </div>
+
+      <!-- IMPULSO -->
+      <div class="price-card">
+        <div class="price-card-icon" style="background:linear-gradient(135deg,#2B7FD4,#1A4B8C)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Impulso</h3>
+        <div class="price-card-price">$49.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para hacer crecer tu negocio.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 liquidación de sueldo</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Declaración de renta anual</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Balance general</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Recursos humanos</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Planificación tributaria</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Informes financieros gerenciales</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <span class="price-card-extra-head">Todo lo anterior más</span>
+          <ul class="price-card-extra">
+            <li>Ventas hasta $5.000.000.- mensuales</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-secondary price-card-cta">Elegir plan</a>
+      </div>
+
+      <!-- PYME -->
+      <div class="price-card">
+        <div class="price-card-icon" style="background:linear-gradient(135deg,#2B7FD4,#0FA884)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Pyme</h3>
+        <div class="price-card-price">$59.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para pymes en crecimiento.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 liquidaciones de sueldo</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Declaración de renta anual</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Balance general</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Recursos humanos</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Planificación tributaria</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Informes financieros gerenciales</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <span class="price-card-extra-head">Todo lo anterior más</span>
+          <ul class="price-card-extra">
+            <li>Ventas hasta $8.000.000.- mensuales</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-secondary price-card-cta">Elegir plan</a>
+      </div>
+
+      <!-- PRO (featured) -->
+      <div class="price-card price-card--featured">
+        <div class="price-card-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Más contratado
+        </div>
+        <div class="price-card-icon" style="background:linear-gradient(135deg,var(--gold),#C6821F)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Pro</h3>
+        <div class="price-card-price">$79.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para llevar tu empresa al siguiente nivel.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 liquidaciones de sueldo</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración de renta anual</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Balance general</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Recursos humanos</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Planificación tributaria</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Informes financieros gerenciales</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <span class="price-card-extra-head">Todo lo anterior más</span>
+          <ul class="price-card-extra">
+            <li>Asesoría tributaria y revisión mensual</li>
+            <li>Ventas hasta $15.000.000.- mensuales</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-teal price-card-cta">Elegir plan</a>
+      </div>
+
+      <!-- CORPORATIVO -->
+      <div class="price-card">
+        <div class="price-card-icon" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="9" y1="13" x2="9.01" y2="13"/><line x1="9" y1="17" x2="9.01" y2="17"/><line x1="15" y1="9" x2="15.01" y2="9"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="15" y1="17" x2="15.01" y2="17"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Corporativo</h3>
+        <div class="price-card-price">$149.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para empresas establecidas.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10 liquidaciones de sueldo</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración de renta anual</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Balance general</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recursos humanos</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Planificación tributaria</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Informes financieros gerenciales</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <span class="price-card-extra-head">Todo lo anterior más</span>
+          <ul class="price-card-extra">
+            <li>Contratos, anexos y finiquitos</li>
+            <li>Previred, DT (F30, F30-1, F48) y asesoría laboral</li>
+            <li>Reunión mensual · hasta 10 liquidaciones (0,5 UF c/u)</li>
+            <li>Ventas hasta $20.000.000.- mensuales</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-secondary price-card-cta">Elegir plan</a>
+      </div>
+
+      <!-- GLOBAL -->
+      <div class="price-card">
+        <div class="price-card-icon" style="background:linear-gradient(135deg,#1A4B8C,#0B1F3A)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Global</h3>
+        <span class="price-card-price-prefix">Desde</span>
+        <div class="price-card-price">$299.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para empresas con visión internacional.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Liquidaciones de sueldo ilimitadas</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración de renta anual</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Balance general</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recursos humanos</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Planificación tributaria</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informes financieros gerenciales</li>
+          <li class="is-muted"><span class="pcf-dash">–</span>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <span class="price-card-extra-head">Todo incluido más</span>
+          <ul class="price-card-extra">
+            <li>Conciliación bancaria y reuniones estratégicas</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-secondary price-card-cta">Elegir plan</a>
+      </div>
+
+      <!-- MULTINACIONAL -->
+      <div class="price-card">
+        <div class="price-card-icon" style="background:linear-gradient(135deg,#0B1F3A,#071628)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="price-card-eyebrow">Plan</div>
+        <h3 class="price-card-name">Multinacional</h3>
+        <span class="price-card-price-prefix">Desde</span>
+        <div class="price-card-price">$399.990<span>/mes</span></div>
+        <p class="price-card-tagline">Para empresas con operaciones globales.</p>
+        <ul class="price-card-features">
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración mensual F29 IVA</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte vía WhatsApp</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recordatorios</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informe anual de gestión</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Liquidaciones de sueldo ilimitadas</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Declaración de renta anual</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Balance general</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recursos humanos</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Planificación tributaria</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Informes financieros gerenciales</li>
+          <li><svg class="pcf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Comercio exterior</li>
+        </ul>
+        <div class="price-card-divider">
+          <span class="price-card-extra-head">Todo incluido más</span>
+          <ul class="price-card-extra">
+            <li>Conciliación bancaria en moneda extranjera</li>
+            <li>Informes financieros nacional e internacional</li>
+            <li>Contrato por 12 meses y Op. Renta: precio mensual x3</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="btn btn-secondary price-card-cta">Elegir plan</a>
+      </div>
+
+    </div>
+
+    <div class="pricing-trust reveal">
+      <div class="pricing-trust-item">
+        <div class="pricing-trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg>
+        </div>
+        <div>
+          <div class="pricing-trust-title">Confianza</div>
+          <div class="pricing-trust-sub">Profesionales expertos a tu servicio</div>
+        </div>
+      </div>
+      <div class="pricing-trust-item">
+        <div class="pricing-trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div>
+          <div class="pricing-trust-title">Seguridad</div>
+          <div class="pricing-trust-sub">Resguardo total de tu información</div>
+        </div>
+      </div>
+      <div class="pricing-trust-item">
+        <div class="pricing-trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="pricing-trust-title">Cercanía</div>
+          <div class="pricing-trust-sub">Acompañamiento en cada etapa</div>
+        </div>
+      </div>
+      <div class="pricing-trust-item">
+        <div class="pricing-trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div>
+          <div class="pricing-trust-title">Crecimiento</div>
+          <div class="pricing-trust-sub">Soluciones que impulsan tu negocio</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1537,7 +1931,7 @@
             </div>
             <div>
               <div class="contact-method-label">WhatsApp / Teléfono</div>
-              <div class="contact-method-value">+56 9 7523 3425</div>
+              <div class="contact-method-value" data-phone-display>+56 9 9333 4545</div>
             </div>
           </div>
           <div class="contact-method">
@@ -1631,7 +2025,7 @@
     <p class="section-sub reveal">No esperes a la próxima fiscalización. Contáctanos ahora y recibe una asesoría gratuita sin compromisos.</p>
     <div class="cta-btns reveal">
       <a href="#contacto" class="btn btn-teal">Solicitar asesoría gratis</a>
-      <a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">
+      <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.849L.057 23.17a.5.5 0 0 0 .617.63l5.52-1.443A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.716-.519-5.255-1.42l-.374-.22-3.876 1.015 1.036-3.775-.24-.388A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
         Escribir por WhatsApp
       </a>
@@ -1670,6 +2064,7 @@
           <ul class="footer-links">
             <li><a href="#nosotros">Sobre nosotros</a></li>
             <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#precios">Planes y precios</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#faq">Preguntas frecuentes</a></li>
           </ul>
@@ -1677,10 +2072,10 @@
         <div>
           <h4 class="footer-title">Contacto</h4>
           <ul class="footer-links">
-            <li><a href="tel:+56975233425">+56 9 7523 3425</a></li>
+            <li><a href="tel:+56993334545" data-phone-tel-link data-phone-display>+56 9 9333 4545</a></li>
             <li><a href="mailto:contabilidadesmel@gmail.com">contabilidadesmel@gmail.com</a></li>
             <li><span>Lun–Vie: 9:00–18:00</span></li>
-            <li><a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
+            <li><a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
           </ul>
         </div>
       </div>
@@ -1705,7 +2100,7 @@
     <!-- WhatsApp -->
     <div id="wa-float" aria-label="Contactar por WhatsApp">
       <span class="wa-tooltip">¡Escríbenos ahora!</span>
-      <a href="https://wa.me/56975233425?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Abrir WhatsApp">
+      <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Abrir WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
           <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.849L.057 23.17a.5.5 0 0 0 .617.63l5.52-1.443A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.716-.519-5.255-1.42l-.374-.22-3.876 1.015 1.036-3.775-.24-.388A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
@@ -1722,10 +2117,29 @@
 <!-- ============================================================
      JAVASCRIPT
 ============================================================ -->
+<script src="js/config.js"></script>
 <script>
 
   /* Año automático en el footer */
   document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  /* ============================================================
+     0. DATOS DE CONTACTO — desde js/config.js
+  ============================================================ */
+  (function applyContactConfig() {
+    const { phone, whatsappMessage } = window.SITE_CONFIG;
+    const waHref = `https://wa.me/${phone.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    document.querySelectorAll('[data-phone-display]').forEach(el => {
+      el.textContent = phone.display;
+    });
+    document.querySelectorAll('[data-phone-tel-link]').forEach(el => {
+      el.setAttribute('href', `tel:${phone.e164}`);
+    });
+    document.querySelectorAll('[data-whatsapp-link]').forEach(el => {
+      el.setAttribute('href', waHref);
+    });
+  })();
 
   /* ============================================================
      1. NAVBAR — scroll behavior
