@@ -1,0 +1,36 @@
+{
+  "site": "https://contabilidadesmel.cl",
+  "nombre": "Contabilidades Mel (ACMEL)",
+  "fuentes_html": "<style id=\"local-fonts\">\n/* Tipografías alojadas en el sitio (Fontsource, licencia OFL) */\n@font-face{font-family:\"DM Serif Display\";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-serif-display-latin-400-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Serif Display\";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/dm-serif-display-latin-400-italic.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/dm-sans-latin-300-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-sans-latin-400-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/dm-sans-latin-500-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/dm-sans-latin-600-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/dm-sans-latin-700-normal.woff2) format(\"woff2\")}\n</style>",
+  "tema": {
+    "fondo2": "#ffffff",
+    "texto": "#222",
+    "suave": "#666",
+    "borde": "#ddd",
+    "fondo": "#0B1F3A",
+    "acento": "#0FA884",
+    "fuente_titulos": "'DM Serif Display',serif",
+    "fuente_texto": "'DM Sans',sans-serif"
+  },
+  "og_home": {
+    "imagen": "img/tanya-pablo-recorte.png",
+    "estilo": "lateral",
+    "kicker": "Contabilidad para pymes",
+    "titulo": "Tu socio contable de confianza",
+    "fondo": "linear-gradient(135deg,#0B1F3A,#1A4B8C)"
+  },
+  "paginas_extra": [],
+  "llms": {
+    "resumen": "Contabilidades Mel (ACMEL) es una oficina de asesoría contable y tributaria para emprendedores y pymes en Chile: formalización e inicio de actividades, contabilidad mensual, Operación Renta y optimización tributaria.",
+    "datos": [
+      "Contacto: WhatsApp +56 9 9333 4545"
+    ],
+    "paginas": [
+      [
+        "Inicio",
+        "",
+        "servicios contables y tributarios, equipo, preguntas frecuentes y contacto"
+      ]
+    ]
+  }
+}
